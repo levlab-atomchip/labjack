@@ -11,7 +11,7 @@ def AIN24_Driver(channelnum):
 
     try:
         results = d.getFeedback( u6.AIN24(channelnum, resolutionIndex, gainIndex, settlingFactor, differential) ) #Returns 
-        AINvalue = d.binaryToCalibratedAnalogVoltage(gainIndex, results)
+        AINvalue = d.binaryToCalibratedAnalogVoltage(gainIndex, results[0])
         return AINvalue
     finally:
         d.close()
